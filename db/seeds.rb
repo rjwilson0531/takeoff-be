@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'database_cleaner/active_record'
+DatabaseCleaner.clean_with(:truncation)
+
+ryan = User.create(username: "ryan", f_name: "Ryan", l_name:"Wilson", s_bio: "Software Engineer. Thinker. Innovator. Hero." , l_bio: "In west Philadelphia born and raised
+On the playground was where I spent most of my days
+Chillin' out maxin' relaxin' all cool
+And all shootin some b-ball outside of the school", prof_img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D86LqlzZvkRI&psig=AOvVaw28jYc9XTXNb63BL3DFL5Wq&ust=1587674434067000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKChj6fy_OgCFQAAAAAdAAAAABAO", )
+
+ann = User.create(username: "ann", f_name: "Ann", l_name: "Duong")
+
+status = Post.create(content: "Hello World", user_id: ryan.id)
+Like.create(post_id: status.id, user_id: ann.id)
