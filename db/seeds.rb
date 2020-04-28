@@ -5,10 +5,8 @@ ryan = User.create(username: "ryan", f_name: "Ryan", l_name:"Wilson", s_bio: "So
 On the playground was where I spent most of my days.", prof_img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D86LqlzZvkRI&psig=AOvVaw28jYc9XTXNb63BL3DFL5Wq&ust=1587674434067000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKChj6fy_OgCFQAAAAAdAAAAABAO", )
 
 ann = User.create(username: "ann", f_name: "Ann", l_name: "Duong")
-
 jenny = User.create(username: "jenny", f_name: "Jenny", l_name: "Ingram")
 joseph = User.create(username: "salsadude", f_name: "Joseph", l_name: "Arias")
-
 matteo = User.create(username: "matteo", f_name: "Matteo", l_name: "Ricci")
 alan = User.create(username: "alanbanks", f_name: "Alan", l_name: "Banks")
 yoan = User.create(username: "yoanishere", f_name: "Yoan", l_name: "Ante")
@@ -25,7 +23,7 @@ wesley = User.create(username: "kindaslepydoe", f_name: "Wesley", l_name: "Chen"
 
 ryan_status1 = Post.create(content: "Hello World", user_id: ryan.id)
 ryan_status2 = Post.create(content: "How about that airline food?", user_id: ryan.id)
-ryan_status1 = Post.create(content: "Checkout this blog I made", user_id: ryan.id)
+ryan_status3 = Post.create(content: "Checkout this blog I made", user_id: ryan.id)
 ann_status1 = Post.create(content: "Class, this is Ann. Now watch me Renegade", user_id: ann.id)
 ann_status2 = Post.create(content: "Hey Class, letting you know that all of our coaches are leaving.", user_id: ann.id)
 ann_status3 = Post.create(content: "This is Ann, I can do the Orange Justice", user_id: ann.id)
@@ -37,3 +35,7 @@ lauren_status2 = Post.create(content: "S* is the worst.", user_id: lauren.id)
 
 
 Like.create(post_id: ryan_status1.id, user_id: ann.id)
+Like.create(post_id: ryan_status1.id, user_id: ann.id)
+Like.create(post_id: ryan_status1.id, user_id: ann.id)
+Like.create(post_id: ryan_status2.id, user_id: ann.id)
+
