@@ -24,10 +24,8 @@ class PostsController < ApplicationController
     end
 
     def destroy
-        byebug
-        post = Post.find(params["id"])
+        post = Post.find(params["id"].to_i)
         post.destroy
-        render post.to_json()
     end
 
 end
