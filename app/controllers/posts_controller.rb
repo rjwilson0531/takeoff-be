@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     def index
         posts = Post.all
         posts = posts.map do |p|
-            p.as_json.merge(p.user.as_json).merge({likes: p.likes.count})
+            p.as_json.merge(p.user.as_json.except("id")).merge({likes: p.likes.count})
         end
         render json: posts.to_json(
             :except => ["created_at", "updated_at","s_bio", "l_bio", "company_id", "location" ]
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
     def show
         post = Post.find(params["id"])
-        post = post.as_json.merge(post.user.as_json).merge({likes: post.likes.count})
+        post = post.as_json.merge(post.user.as_json.except("id")).merge({likes: post.likes.count})
         render json: post.to_json(
             :except => ["created_at", "updated_at","s_bio", "l_bio", "company_id", "location" ]
         )
