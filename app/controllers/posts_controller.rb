@@ -19,8 +19,7 @@ class PostsController < ApplicationController
     end
 
     def create
-        byebug
-        post = Post.create(user_id: params["user_id"].to_i)
+        post = Post.create(user_id: params["user_id"].to_i, content: params["content"])
         render post.to_json()
     end
 
