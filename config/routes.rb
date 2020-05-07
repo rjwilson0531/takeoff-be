@@ -3,4 +3,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :create, :destroy]
   end
   resources :likes, only: [:create, :destroy]
+  post '/login', to: 'auth#create'
 end

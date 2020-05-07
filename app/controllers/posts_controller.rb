@@ -20,7 +20,10 @@ class PostsController < ApplicationController
 
     def create
         post = Post.create(user_id: params["user_id"].to_i, content: params["content"])
-        render post.to_json()
+        post = post.as_json.merge(post.user.as_json.except("id")).merge({likes: post.likes.count})
+        render json: post.to_json(
+            :except => ["created_at", "updated_at","s_bio", "l_bio", "company_id", "location" ]
+        )
     end
 
     def destroy
